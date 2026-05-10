@@ -15,7 +15,20 @@
                 let tablaHeader = document.createElement('thead');
                 let tablaBody = document.createElement('tbody');
 
-                for(let i=0; i < obj.length; i++) {
+                //fila del header
+                let primeraFila = document.createElement('tr');
+
+                for(let i=0; i<obj[0].length; i++) {
+
+                    let celdaPrimeraFila = document.createElement('td');
+                    celdaPrimeraFila.textContent = obj[0][i];
+                    primeraFila.appendChild(celdaPrimeraFila);
+                }
+                tablaHeader.appendChild(primeraFila);
+                tabla.appendChild(tablaHeader);
+
+                //Se añade la informacion de TBODY
+                for(let i=1; i < obj.length; i++) {
                     let fila = document.createElement('tr');
 
                     for(let j=0; j < obj[i].length; j++){
@@ -23,17 +36,7 @@
                         celda.textContent = obj[i][j];
                         fila.appendChild(celda);
                     };
-
-                    //Valido si es la primera fila
-                    if(i==0) {
-                        //Si es l aprimera fila añado la fila al header 
-                        tablaHeader.appendChild(fila);
-                        tabla.appendChild(tablaHeader);
-                    }else {
-                        //sino es la primera fila añado la fila al cuerpo de la tabla
-                        tablaBody.appendChild(fila);
-                    }
-
+                    tablaBody.appendChild(fila);
                 };
                 
                 /*

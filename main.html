@@ -4,12 +4,29 @@
         <button type="button" class="btn btn-dark m-3" onclick="crearTablaContactos()">
             Mostrar contactos 
         </button>
-
     </div>
 
     <!-- Tabla -->
     <div class="container-sm mb-4 w-50" id="divContactos">
 
-
     </div>
+
+    <!--NOTIFICACIONES-->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+        <div id="notificacion" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+
+            <div class="toast-header" id="icono-notificacion">
+                <div id="icono-notificacion"><i id="iconoNotificacion"></i></div>
+                <strong class="me-auto" id="tituloNotificacion"></strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+
+            <div class="toast-body" id="textoNotificacion">
+                
+            </div>
+
+        </div>
+    </div>
+
 </main>

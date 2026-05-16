@@ -1,9 +1,33 @@
 <main>
+
     <!-- Botones -->
-    <div class="d-flex justify-content-center mb-4">
-        <button type="button" class="btn btn-dark m-3" onclick="crearTablaContactos()">
-            Mostrar contactos 
-        </button>
+    <div class="d-flex justify-content-center my-3">
+            <!-- FORMULARIO 
+            onsubmit evita el comportamiento automático del formulario
+            y permite que JavaScript controle qué se actualiza.
+            -->
+        <form onsubmit="insertarContacto()" method="dialog" id="formulario">
+
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Introduce el nombre del contacto</label>
+                <input type="text" name="nombre" id="nombre" class="form-control">
+            </div>
+
+            <div lass="mb-3">
+                <label for="correo" class="form-label">Introduce el correo del contacto</label>
+                <input type="email" name="correo" id="correo" class="form-control">
+            </div>
+
+            <!-- Botones Formulario-->
+            
+            <button type="button" class="btn btn-dark m-3" onclick="crearTablaContactos()">
+                Mostrar contactos 
+            </button>
+
+            <button type="submit" class="btn btn-primary">
+                Crear contacto
+            </button>
+        </form>        
     </div>
 
     <!-- Tabla -->
